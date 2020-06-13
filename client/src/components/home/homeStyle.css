@@ -1,0 +1,13 @@
+#body {
+background-color: darkgrey;
+
+}
+
+#MainText {
+    text-align: center;
+    color: #282c34;
+    font-family: "Allerta Stencil", Sans-serif;
+    font-size: 50px;
+    text-shadow: burlywood;
+    margin-top: 50%;
+}
