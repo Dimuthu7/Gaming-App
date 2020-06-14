@@ -2,8 +2,20 @@
 
 
 
-#body {
-    background-color: darkgrey;
+
+#loginBody {
+    background-color: #696969;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+
+    padding: 30px;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    padding: 0px;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    text-align: center;
 }
 
 a {
@@ -38,9 +50,10 @@ h2 {
 }
 
 #formContent {
+
     -webkit-border-radius: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
-    background: darkgrey;
+
     padding: 30px;
     width: 90%;
     max-width: 450px;
@@ -66,9 +79,9 @@ h2 {
 /* FORM TYPOGRAPHY*/
 
 input[type=button], input[type=submit], input[type=reset]  {
-    background-color: #56baed;
+    background-color: #A9A9A9;
     border: none;
-    color: white;
+    color: darkgrey;
     padding: 15px 80px;
     text-align: center;
     text-decoration: none;
@@ -88,7 +101,7 @@ input[type=button], input[type=submit], input[type=reset]  {
 }
 
 input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
-    background-color: #39ace7;
+    background-color: #2F4F4F;
 }
 
 input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
@@ -100,7 +113,7 @@ input[type=button]:active, input[type=submit]:active, input[type=reset]:active  
 }
 
 input[type=password], input[type=email] {
-    background-color: #f6f6f6;
+    background-color: darkgrey;
     border: none;
     color: #0d0d0d;
     padding: 15px 32px;
@@ -110,7 +123,7 @@ input[type=password], input[type=email] {
     font-size: 16px;
     margin: 5px;
     width: 85%;
-    border: 2px solid #f6f6f6;
+    border: 2px solid darkgrey;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -ms-transition: all 0.5s ease-in-out;
@@ -121,7 +134,7 @@ input[type=password], input[type=email] {
 }
 
 input[type=password]:focus , input[type=email]:focus{
-    background-color: #fff;
+    background-color: darkgrey;
     border-bottom: 2px solid #5fbae9;
 }
 

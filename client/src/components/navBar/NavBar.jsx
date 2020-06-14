@@ -1,6 +1,11 @@
 import React, {Component} from 'react';
 
 class NavBar extends Component {
+    onSignOutHandle = (e) => {
+        localStorage.removeItem('user-name');
+        localStorage.removeItem('user-email');
+    }
+
     render() {
         return (
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -15,12 +20,18 @@ class NavBar extends Component {
                             <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Store</a>
+                            <a className="nav-link" href="/store">Store</a>
                         </li>
                     </ul>
-                    <span className="navbar-text ml-auto">
-                      <a href="/login">SignIn</a> | <a href="/register">SignUp</a>
+                    {(localStorage.getItem('user-name')) !== null ?
+                    <span className="navbar-text ml-auto" >
+                        {localStorage.getItem('user-name')} | <a href="/login" onClick={this.onSignOutHandle}>SignOut</a>
                     </span>
+                        :
+                        <span className="navbar-text ml-auto">
+                            <a href="/login">SignIn</a> | <a href="/register">SignUp</a>
+                        </span>
+                    }
                 </div>
             </nav>
         );

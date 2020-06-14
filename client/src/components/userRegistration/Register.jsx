@@ -17,18 +17,20 @@ export default class Login extends Component{
         validate: false,
     };
 
-
+    //Handle change event for all input field in login form
     onChangeHandle = (e) => {
         this.setState({
             [e.target.name]: e.target.value
         })
     }
 
+    //Handle submit button click event
     onSubmitHandler = (e) => {
         e.preventDefault();
         this.fnValidateRegister();
         if(this.state.validate){
             this.setState({ isLoading: true})
+            //send POST request to the API for insert user details.
             axios({
                 method: 'post',
                 url: "http://localhost:8080/api/users/register",
@@ -42,7 +44,11 @@ export default class Login extends Component{
             }).then(res => {
                 this.setState({
                     isLoading: false,
+                    name: '',
+                    address: '',
                     email: '',
+                    mobile:'',
+                    password: ''
                 })
                 Swal.fire({
                     position: 'top-end',
@@ -51,26 +57,24 @@ export default class Login extends Component{
                     html: `Your ID: ( ${res.data._id} )`,
                     showConfirmButton: false,
                     timer: 2000
-                }).then(r =>{
-                    this.setState({
-                        redirect: "/login"
-                    })
+                })
+                this.setState({
+                    redirect: "/login"
                 })
             }).catch(err =>{
                 this.setState({
                     isLoading: false,
-                    name: '',
-                    address: '',
-                    email: '',
-                    mobile:'',
-                    password: ''
                 })
                 if(err.response.status === 404){
                     Swal.fire({
                         icon: "error",
                         title: "Something went wrong!",
                         text: err.response.data
-                    });
+                    }).then(res =>{
+                        this.setState({
+                            email: '',
+                        })
+                    })
                 }
             })
         }
@@ -110,7 +114,7 @@ export default class Login extends Component{
 
             <div className="wrapper fadeInDown">
 
-                <div id="formContent" >
+                <div id="RegiBody" >
 
                     <h2> Sign Up </h2><br/><br/>
                     <p className="login-text">

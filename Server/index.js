@@ -9,6 +9,7 @@ const app = express();
 
 // Import routes
 const UserRoutes = require("./routes/UserRoutes");
+const GameRoutes = require("./routes/GameRoute");
 
 //loads environment variables from a .env file into process
 dotenv.config();
@@ -28,8 +29,9 @@ mongoose.connect(
   );
 
 
-  // Config routes
+  // Config routes 
 app.use("/api/users", UserRoutes);
+app.use("/api/game", GameRoutes);
 
 
 // Start server

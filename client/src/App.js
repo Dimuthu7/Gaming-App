@@ -4,28 +4,10 @@ import Home from "./components/home/home";
 import Login from "./components/userLogin/Login";
 import Register from "./components/userRegistration/Register";
 import NavBar from "./components/navBar/NavBar";
+import Store from "./components/store/Store"
+import Footer from "./components/footer/Footer";
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            userName: "",
-            userAddress: "",
-            userEmail: "",
-            userMobile: "",
-            userPassword: "",
-            loginEmail: "",
-            loginPassword: ""
-        }
-    }
-
-    onChangeHandle = (e) => {
-        alert(e.target.value);
-        this.setState({
-            [e.target.name]: e.target.value
-        })
-    }
-
     render() {
         return (
             <div>
@@ -35,8 +17,10 @@ class App extends Component {
                         <Route path="/" component={Home} exact/>
                         <Route path="/login" component={Login} exact/>
                         <Route path="/register" component={Register} exact/>
+                        <Route path="/store" component={Store} exact/>
                     </Switch>
                 </BrowserRouter>
+                <Footer/>
             </div>
 
         );
